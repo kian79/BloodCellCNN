@@ -38,17 +38,80 @@ The dataset consists of blood cell images categorized into 8 classes. Each image
 - `images`: Array of image data.
 - `labels`: Corresponding class labels.
 
-**Note**: Ensure you have the `training_set.npz` file in the project directory.
+Here is a photo of different classes in the dataset.
+![Images](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
 
-## Installation
+## Model Architecture
 
-### Prerequisites
+The project employs three different pre-trained convolutional neural network architectures as base models:
 
-- Python 3.8 or higher
-- [Google Colab](https://colab.research.google.com/) (optional, for running the notebook)
+- EfficientNetB3
+- MobileNetV2
+- ResNet50
+Each model is customized with:
 
-### Clone the Repository
+- Batch Normalization
+- Global Average Pooling
+- Dropout Layers
+- Dense Output Layer with Softmax Activation
 
-```bash
-git clone https://github.com/yourusername/BloodCellClassifier.git
-cd BloodCellClassifier
+Data Augmentation Layers:
+
+- Random Flips, Rotations, Zooms, Contrast adjustments, Cropping, Resizing
+- Custom layers for Gaussian Noise, Hue and Saturation adjustments.
+
+
+## Training
+
+### Data Preparation
+- Outlier Removal: Eliminates specific outlier images from the dataset.
+- Train-Validation-Test Split: 80% training, 10% validation, 10% testing with stratification.
+- Sample Weighting: Balances class weights to handle class imbalance.
+
+### Augmentation Techniques
+- AugMix
+- RandAugment
+- CutMix
+- MixUp
+- Channel Shuffle
+- Random Color Degeneration
+
+### Training Configuration
+- Epochs: 100
+- Batch Size: 32
+- Optimizer: Lion optimizer with a learning rate of 1e-4
+- Loss Function: Categorical Crossentropy
+- Callbacks: Early Stopping and Learning Rate Scheduler
+
+
+### Training Process
+The models are trained individually with their respective configurations. After training, each model's weights are saved for ensemble prediction.
+
+## Results
+
+### Model Performance
+Each model's accuracy on the test set is as belows. 
+
+- EfficientNetB3: Up to 96.5%
+- MobileNetV2: Up to 95.2%
+- ResNet50: Up to 94.5%
+
+### Ensemble Performance
+Combining predictions from all models yields improved accuracy:
+
+- Test Accuracy: 97.74
+- Precision: 97.97
+- Recall: 97.74
+
+### Confusion Matrix
+A confusion matrix visualizes the performance across different classes, highlighting areas of high accuracy and potential misclassifications.
+
+![Confusion Matrix](https://github.com/[kian79]/BloodCellCNN/blob/[branch]/image.jpg?raw=true)
+
+### Visualization
+The project includes comprehensive visualizations to understand data distribution and model performance:
+
+- Data Distribution: Shows the number of samples per class.
+- Sample Images: Displays sample images from each class.
+- Training Curves: Plots of loss and accuracy over epochs.
+- Confusion Matrix: Detailed performance across classes.
