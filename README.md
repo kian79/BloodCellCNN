@@ -15,7 +15,6 @@
 - [Training](#training)
 - [Results](#results)
 - [Visualization](#visualization)
-- [Contributing](#contributing)
 - [License](#license)
 - [Acknowledgements](#acknowledgements)
 
@@ -39,7 +38,7 @@ The dataset consists of blood cell images categorized into 8 classes. Each image
 - `labels`: Corresponding class labels.
 
 Here is a photo of different classes in the dataset.
-![Images](https://github.com/kian79/blob/BloodCellCNN/cells.jpg?raw=true)
+![Images](https://github.com/kian79/BloodCellCNN/blob/main/Cells.png)
 
 ## Model Architecture
 
@@ -85,7 +84,9 @@ Data Augmentation Layers:
 
 
 ### Training Process
-The models are trained individually with their respective configurations. After training, each model's weights are saved for ensemble prediction.
+The models are trained individually with their respective configurations. After training, each model's weights are saved for ensemble prediction. Here is the training curve of the ResNet50 model. Note that the validation accuracy is higher than the training accuracy due to hard augmentations on the training data.
+![Validation Accuracy](https://github.com/kian79/BloodCellCNN/blob/main/Accuracy.png)
+
 
 ## Results
 
@@ -106,7 +107,7 @@ Combining predictions from all models yields improved accuracy:
 ### Confusion Matrix
 A confusion matrix visualizes the performance across different classes, highlighting areas of high accuracy and potential misclassifications.
 
-![Confusion Matrix](https://github.com/[kian79]/BloodCellCNN/blob/[branch]/image.jpg?raw=true)
+![Confusion Matrix](https://github.com/kian79/BloodCellCNN/blob/main/confusion_matrix.png)
 
 ### Visualization
 The project includes comprehensive visualizations to understand data distribution and model performance:
@@ -116,10 +117,11 @@ The project includes comprehensive visualizations to understand data distributio
 - Training Curves: Plots of loss and accuracy over epochs.
 - Confusion Matrix: Detailed performance across classes.
 
-## Licensce
+
+## License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
-### Acknowledgements
+## Acknowledgements
 TensorFlow for the deep learning framework.
 KerasCV for data augmentation layers.
 Seaborn and Matplotlib for visualization.
