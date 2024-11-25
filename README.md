@@ -39,7 +39,7 @@ The dataset consists of blood cell images categorized into 8 classes. Each image
 - `labels`: Corresponding class labels.
 
 Here is a photo of different classes in the dataset.
-![Images](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+![Images](https://github.com/kian79/blob/BloodCellCNN/cells.jpg?raw=true)
 
 ## Model Architecture
 
@@ -115,3 +115,12 @@ The project includes comprehensive visualizations to understand data distributio
 - Sample Images: Displays sample images from each class.
 - Training Curves: Plots of loss and accuracy over epochs.
 - Confusion Matrix: Detailed performance across classes.
+
+## Licensce
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+### Acknowledgements
+TensorFlow for the deep learning framework.
+KerasCV for data augmentation layers.
+Seaborn and Matplotlib for visualization.
+Scikit-learn for data preprocessing and evaluation metrics.
