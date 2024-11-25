@@ -47,6 +47,7 @@ The project employs three different pre-trained convolutional neural network arc
 - EfficientNetB3
 - MobileNetV2
 - ResNet50
+  
 Each model is customized with:
 
 - Batch Normalization
